@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/giphyFragment">
+
+    <fragment
+        android:id="@+id/giphyFragment"
+        android:name="com.example.giphy.ui.fragment.GiphyFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_giphy" >
+        <action
+            android:id="@+id/action_giphyFragment_to_giphyDetailsFragment"
+            app:destination="@id/giphyDetailsFragment"
+            app:popUpTo="@id/giphyFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/giphyDetailsFragment"
+        android:name="com.example.giphy.ui.fragment.GiphyDetailsFragment"
+        android:label="fragment_giphy_detailes"
+        tools:layout="@layout/fragment_giphy_detailes" >
+        <argument
+            android:name="movieId"
+            app:argType="string" />
+    </fragment>
+</navigation>
